@@ -44,7 +44,7 @@ use admin
 
 db.createUser({
   user: "farmuser",
-  pwd: "p@sswOrd",
+  pwd: "p@sawOrd",
   roles: [ "root" ]
 })
 ```
@@ -69,7 +69,7 @@ db.createUser(
 
 connect to database with username and password
 
-`mongo farmstackDB -u farm -p 'p@sawOrd'`
+`mongo farmstackDB -u farmusr -p 'passwOrd'`
 
 mongodb connection string
 ```
@@ -77,4 +77,3 @@ export DEBUG_MODE=True
 export DB_URL="mongodb+srv://farmusr:passwOrd@localhost/farmstackDB?retryWrites=true&w=majority"
 export DB_NAME="farmstackDB"
 ```
-
