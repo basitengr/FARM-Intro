@@ -32,3 +32,49 @@ If you are unsure which init system your platform uses, run the following comman
 `systemctl start mongod`
 
 `systemctl enable mongod`
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-20-04
+
+The following command will connect to the database and output its current version, server address, and port. It will also return the result of MongoDB’s internal connectionStatus command:
+
+`mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
+
+```
+use admin
+
+db.createUser({
+  user: "farmuser",
+  pwd: "p@sswOrd",
+  roles: [ "root" ]
+})
+```
+Create database
+```
+db = new Mongo().getDB("farmstackDB")
+use farmstackDB
+```
+ Create user for database
+```
+db.createUser(
+   {
+     user: "farmusr",
+     pwd: "passwOrd",      // Or  passwordPrompt() to ask for password
+     roles: [{ 
+      role: "readWrite",
+      db: "farmstackDB"
+     } ]
+   }
+)
+```
+
+connect to database with username and password
+
+`mongo farmstackDB -u farm -p 'p@sawOrd'`
+
+mongodb connection string
+```
+export DEBUG_MODE=True
+export DB_URL="mongodb+srv://farmusr:passwOrd@localhost/farmstackDB?retryWrites=true&w=majority"
+export DB_NAME="farmstackDB"
+```
+
